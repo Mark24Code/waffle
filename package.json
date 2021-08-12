@@ -1,0 +1,19 @@
+{
+  "name": "waffle",
+  "version": "0.1.0",
+  "description": "light css grid framework",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn run watch & yarn run preview",
+    "build": "sass src/*.scss dist/*.css",
+    "watch": "sass --watch src:dist",
+    "preview": "parcel ./demo/index.html"
+  },
+  "dependencies": {
+    "sass": "1.37.5"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0-rc.0"
+  }
+}
