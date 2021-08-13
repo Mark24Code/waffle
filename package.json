@@ -1,7 +1,7 @@
 {
-  "name": "@mark24codehub/waffle",
-  "version": "0.2.1",
-  "description": "light css grid framework",
+  "name": "waffle-grid-layout",
+  "version": "0.2.2",
+  "description": "lightweight CSS Grid Layout",
   "style": "build/waffle.css",
   "sass": "src/waffle.scss",
   "main": "build/waffle.css",
