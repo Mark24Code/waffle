@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Waffle Grid System</title><link rel="stylesheet" href="/index.2f07a92e.css"><link rel="stylesheet" href="/index.3f0efd31.css"></head><body> <h1>W A F F L E</h1> <img src="/waffle.e9c5eda7.jpg" width="200px" height="200px"> <h1>一、Waffle介绍</h1> <section> <h2>背景</h2> <p>Waffle只是一个 工具css，华夫饼的图案和Grid很像都是格子</p> <p>Waffle只是一个产生的背景是: 当我们的需求存在自己的设计稿，不同于没有设计稿的时候 Bootstrap、AndDesign、Tailwindcss等框架处理的问题。</p> <p>再加上没有看到很好地抽离的grid布局。而且普遍是固定grid数目不适合我们灵活的需求。</p> <p>所以创造了一个grid布局系统来解决这个问题。</p> <h2>Feature</h2> <p>简单有几个单独亮点，目标是：</p> <p>是grid的css工具类，简化grid使用，提供二维布局能力</p> <p>1. 可以指定 行列生成独特栅格化的容器，支持响应式</p> <p>2. 行列跨度、偏移支持响应式</p> <p>3. 默认遵循12栅格，但是提供24栅格支持。应对足够的需求。</p> </section> <h2>二、说明</h2> <section class="demo demo1"> <div> <h2>容器：默认12栅格 1行</h2> <p> 指定grid: 指定父class为 <code>grid</code> 自动建立 12列 1行的 容器。 超出部分grid默认行为是拓展区域。 </p> </div> <textarea rows="10" cols="100">
+      <div class="grid">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+        <div class="item item-6">6</div>
+        <div class="item item-7">7</div>
+        <div class="item item-8">8</div>
+        <div class="item item-9">9</div>
+        <div class="item item-3">10</div>
+        <div class="item item-4">11</div>
+        <div class="item item-5">12</div>
+        <div class="item item-6">13</div>
+      </div>
+    </textarea> <div class="demo1-box"> <div class="grid"> <div class="item item-1">1</div> <div class="item item-2">2</div> <div class="item item-3">3</div> <div class="item item-4">4</div> <div class="item item-5">5</div> <div class="item item-6">6</div> <div class="item item-7">7</div> <div class="item item-8">8</div> <div class="item item-9">9</div> <div class="item item-3">10</div> <div class="item item-4">11</div> <div class="item item-5">12</div> <div class="item item-6">13</div> </div> </div> </section> <section class="demo demo2"> <h2>容器：支持单独给grid指定栅格，行列自定义，最大24行，24列</h2> <div> <p> 也可以独立指定容器栅格系统, 最大支持 col 24个，row 24个。比如这里建立 3x6的栅格 <code>grid grid-col-6 grid-row-3</code> grid 属性需要一起定义在容器元素上。 </p> </div> <textarea rows="10" cols="100">
+      <div class="grid grid-col-3 grid-row-2">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+        <div class="item item-6">6</div>
+        <div class="item item-7">7</div>
+        <div class="item item-8">8</div>
+        <div class="item item-9">9</div>
+        <div class="item item-3">10</div>
+        <div class="item item-4">11</div>
+        <div class="item item-5">12</div>
+        <div class="item item-6">13</div>
+      </div>
+    </textarea> <div class="demo2-box"> <div class="grid grid-col-3 grid-row-2"> <div class="item item-1">1</div> <div class="item item-2">2</div> <div class="item item-3">3</div> <div class="item item-4">4</div> <div class="item item-5">5</div> <div class="item item-6">6</div> <div class="item item-7">7</div> <div class="item item-8">8</div> <div class="item item-9">9</div> <div class="item item-3">10</div> <div class="item item-4">11</div> <div class="item item-5">12</div> <div class="item item-6">13</div> </div> </div> </section> <section class="demo demo3"> <h2>容器：支持响应式定义</h2> <div> <p>响应式断点： <code> xs: 0, sm: 640px, md: 768px, lg: 1024px, xl: 1280px, 2xl: 1536px </code> </p> <p> 和Bootstrap不同，没有采用 g-col-sm-* 的形式, 而是采用了后缀模式： grid-col-6:md </p> <p> 如下代码存在 三档的响应式 <code> grid grid-col-1 grid-row-1 grid-col-3:sm grid-row-3:sm grid-col-4:md grid-row-4:md grid-col-5:lg grid-row-4:lg </code> </p> </div> <textarea rows="10" cols="100">
+        <div class="grid grid-col-1 grid-col-3:sm grid-col-4:md grid-col-5:lg grid-row-1 grid-row-3:sm grid-row-4:lg grid-row-4:md">
+          <div class="item item-1">1</div>
+          <div class="item item-2">2</div>
+          <div class="item item-3">3</div>
+          <div class="item item-4">4</div>
+          <div class="item item-5">5</div>
+          <div class="item item-6">6</div>
+          <div class="item item-7">7</div>
+          <div class="item item-8">8</div>
+          <div class="item item-9">9</div>
+          <div class="item item-3">10</div>
+          <div class="item item-4">11</div>
+          <div class="item item-5">12</div>
+          <div class="item item-6">13</div>
+          <div class="item item-1">14</div>
+          <div class="item item-2">15</div>
+          <div class="item item-3">16</div>
+        </div>
+      </textarea> <div class="demo3-box"> <div class="grid grid-col-1 grid-col-3:sm grid-col-4:md grid-col-5:lg grid-row-1 grid-row-3:sm grid-row-4:lg grid-row-4:md"> <div class="item item-1">1</div> <div class="item item-2">2</div> <div class="item item-3">3</div> <div class="item item-4">4</div> <div class="item item-5">5</div> <div class="item item-6">6</div> <div class="item item-7">7</div> <div class="item item-8">8</div> <div class="item item-9">9</div> <div class="item item-3">10</div> <div class="item item-4">11</div> <div class="item item-5">12</div> <div class="item item-6">13</div> <div class="item item-1">14</div> <div class="item item-2">15</div> <div class="item item-3">16</div> </div> </div> </section> <section class="demo demo4"> <h2>元素：跨行、列的能力</h2> <div> <p> 可以 跨列 col-6 跨行 row-6，使用grid的二维能力。最高支持24。 <code> 父容器 class='grid grid-col-6 grid-row-6' 1号元素占满一行 class="item item-1 col-6 row-1" </code> 1号元素占满一行，8号元素占满2行，9号元素占满两列。 </p> </div> <textarea rows="10" cols="100">
+      <div class="grid grid-col-6 grid-row-6">
+        <div class="col-6 item item-1 row-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+        <div class="item item-6">6</div>
+        <div class="item item-7">7</div>
+        <div class="col-6 item item-8 row-2">8</div>
+        <div class="col-2 item item-9">9</div>
+        <div class="item item-3">10</div>
+        <div class="item item-4">11</div>
+        <div class="item item-5">12</div>
+        <div class="item item-6">13</div>
+        <div class="item item-7">14</div>
+        <div class="item item-8">15</div>
+        <div class="item item-9">16</div>
+        <div class="item item-3">17</div>
+        <div class="item item-4">18</div>
+        <div class="item item-5">19</div>
+        <div class="item item-6">20</div>
+      </div>
+      </textarea> <div class="demo4-box"> <div class="grid grid-col-6 grid-row-6"> <div class="col-6 item item-1 row-1">1</div> <div class="item item-2">2</div> <div class="item item-3">3</div> <div class="item item-4">4</div> <div class="item item-5">5</div> <div class="item item-6">6</div> <div class="item item-7">7</div> <div class="col-6 item item-8 row-2">8</div> <div class="col-2 item item-9">9</div> <div class="item item-3">10</div> <div class="item item-4">11</div> <div class="item item-5">12</div> <div class="item item-6">13</div> <div class="item item-7">14</div> <div class="item item-8">15</div> <div class="item item-9">16</div> <div class="item item-3">17</div> <div class="item item-4">18</div> <div class="item item-5">19</div> <div class="item item-6">20</div> </div> </div> </section> <section class="demo demo5"> <h2>元素：跨行、列的也可以使用响应式，使用后缀语法</h2> <div> <p> 使用方法类似，使用后缀语法。1号元素产生响应式跨行。 <code> class="item item-1 col-1:sm col-2:md col-3:lg col-6:xl" </code> </p> </div> <textarea rows="10" cols="100">
+        <div class="grid grid-col-6 grid-row-6">
+          <div class="col-1:sm col-2:md col-3:lg col-6:xl item item-1">1</div>
+          <div class="item item-2">2</div>
+          <div class="item item-3">3</div>
+          <div class="item item-4">4</div>
+          <div class="item item-5">5</div>
+          <div class="item item-6">6</div>
+          <div class="item item-7">7</div>
+          <div class="col-6 item item-8 row-2">8</div>
+          <div class="col-2 item item-9">9</div>
+          <div class="item item-3">10</div>
+          <div class="item item-4">11</div>
+          <div class="item item-5">12</div>
+          <div class="item item-6">13</div>
+          <div class="item item-7">14</div>
+          <div class="item item-8">15</div>
+          <div class="item item-9">16</div>
+          <div class="item item-3">17</div>
+          <div class="item item-4">18</div>
+          <div class="item item-5">19</div>
+          <div class="item item-6">20</div>
+        </div>
+        </textarea> <div class="demo5-box"> <div class="grid grid-col-6 grid-row-6"> <div class="col-1:sm col-2:md col-3:lg col-6:xl item item-1">1</div> <div class="item item-2">2</div> <div class="item item-3">3</div> <div class="item item-4">4</div> <div class="item item-5">5</div> <div class="item item-6">6</div> <div class="item item-7">7</div> <div class="col-6 item item-8 row-2">8</div> <div class="col-2 item item-9">9</div> <div class="item item-3">10</div> <div class="item item-4">11</div> <div class="item item-5">12</div> <div class="item item-6">13</div> <div class="item item-7">14</div> <div class="item item-8">15</div> <div class="item item-9">16</div> <div class="item item-3">17</div> <div class="item item-4">18</div> <div class="item item-5">19</div> <div class="item item-6">20</div> </div> </div> </section> <section class="demo demo6"> <h2>元素：偏移元素</h2> <div> <p> 元素的排列 偏移 列方向偏移 col-start-2 行方向偏移 row-start-2 <code> item item-2 col-start-4 </code> </p> </div> <textarea rows="10" cols="100">
+        <div class="grid grid-col-6">
+          <div class="item item-1">1</div>
+          <div class="col-start-4 item item-2" style="color:red;font-weight:700">2</div>
+          <div class="item item-3">3</div>
+          <div class="item item-4">4</div>
+          <div class="item item-5">5</div>
+          <div class="item item-6">6</div>
+          <div class="item item-7">7</div>
+          <div class="item item-8">8</div>
+          <div class="item item-9">9</div>
+          <div class="item item-3">10</div>
+          <div class="item item-4">11</div>
+          <div class="item item-5">12</div>
+          <div class="item item-6">13</div>
+          <div class="item item-7">14</div>
+          <div class="item item-8">15</div>
+          <div class="item item-9">16</div>
+          <div class="item item-3">17</div>
+          <div class="item item-4">18</div>
+          <div class="item item-5">19</div>
+          <div class="item item-6">20</div>
+        </div>
+        </textarea> <div class="demo6-box"> <div class="grid grid-col-6"> <div class="item item-1">1</div> <div class="col-start-4 item item-2" style="color:red;font-weight:700">2</div> <div class="item item-3">3</div> <div class="item item-4">4</div> <div class="item item-5">5</div> <div class="item item-6">6</div> <div class="item item-7">7</div> <div class="item item-8">8</div> <div class="item item-9">9</div> <div class="item item-3">10</div> <div class="item item-4">11</div> <div class="item item-5">12</div> <div class="item item-6">13</div> <div class="item item-7">14</div> <div class="item item-8">15</div> <div class="item item-9">16</div> <div class="item item-3">17</div> <div class="item item-4">18</div> <div class="item item-5">19</div> <div class="item item-6">20</div> </div> </div> </section> </body></html>
