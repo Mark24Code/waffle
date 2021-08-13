@@ -1,4 +1,4 @@
-# Waffle
+# Waffle Grid
 
 Lightweight CSS Grid System
 

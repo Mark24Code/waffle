@@ -1,9 +1,13 @@
 {
-  "name": "waffle",
+  "name": "@mark24codehub/waffle",
   "version": "0.2.0",
   "description": "light css grid framework",
   "style": "build/waffle.css",
   "sass": "src/waffle.scss",
+  "main": "build/waffle.css",
+  "directories": {
+    "doc": "docs"
+  },
   "keywords": [
     "css",
     "sass",
@@ -39,5 +43,14 @@
     "sass": "1.37.5",
     "serve": "^12.0.0",
     "standard-version": "^9.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mark24Code/waffle.git"
+  },
+  "author": "Mark24",
+  "bugs": {
+    "url": "https://github.com/Mark24Code/waffle/issues"
+  },
+  "homepage": "https://github.com/Mark24Code/waffle#readme"
 }
