@@ -1,6 +1,6 @@
 {
   "name": "waffle",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "light css grid framework",
   "style": "build/waffle.css",
   "sass": "src/waffle.scss",
@@ -25,7 +25,11 @@
     "watch": "sass --watch src:build",
     "preview": "npx parcel ./demo/index.html",
     "build:docs": "yarn run build && npx parcel build ./demo/index.html --dist-dir docs/  --public-url https://mark24code.github.io/waffle/",
-    "preview:docs": "yarn run build && npx parcel build ./demo/index.html --dist-dir docs/ && npx serve ./docs"
+    "preview:docs": "yarn run build && npx parcel build ./demo/index.html --dist-dir docs/ && npx serve ./docs",
+    "release": "standard-version",
+    "release:major": "standard-version -- --release-as major",
+    "release:minor": "standard-version -- --release-as minor",
+    "release:patch": "standard-version -- --release-as patch"
   },
   "devDependencies": {
     "@parcel/transformer-image": "2.0.0-rc.0",
@@ -33,6 +37,7 @@
     "parcel": "^2.0.0-rc.0",
     "postcss": "^8.3.6",
     "sass": "1.37.5",
-    "serve": "^12.0.0"
+    "serve": "^12.0.0",
+    "standard-version": "^9.3.1"
   }
 }
