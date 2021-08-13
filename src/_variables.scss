@@ -1,0 +1,49 @@
+
+
+// Prefix
+$prefix: wf- !default;
+
+// Namespace symbol
+$ns: '\:' !default;
+
+
+// Grid System 
+// default count
+$grid-column-count: 12 !default;
+$grid-row-count: 1 !default;
+
+
+// max count
+$grid-column-max-count: 24 !default;
+$grid-row-max-count: 24 !default;
+
+
+// grid-breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  2xl: 1536px
+) !default;
+
+// TODO 一会弄 breakpoint
+
+// TODO 一会弄Gutter
+// // scss-docs-start spacer-variables-maps
+// $spacer: 1rem !default;
+// $spacers: (
+//   0: 0,
+//   1: $spacer * .25,
+//   2: $spacer * .5,
+//   3: $spacer,
+//   4: $spacer * 1.5,
+//   5: $spacer * 3,
+// ) !default;
+
+
+
+// $grid-gutter-width:           1.5rem !default;
+// $gutters: $spacers !default;
+

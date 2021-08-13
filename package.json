@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "yarn run watch & yarn run preview",
-    "build": "sass src/*.scss dist/*.css",
-    "watch": "sass --watch src:dist",
+    "build": "sass src/*.scss build/*.css",
+    "watch": "sass --watch src:build",
     "preview": "parcel ./demo/index.html"
   },
   "dependencies": {

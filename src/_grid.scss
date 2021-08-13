@@ -1,0 +1,74 @@
+@import './_variables.scss';
+@import './_breakpoints.scss';
+
+
+
+// Framework grid generation
+// use breakpoints to generate correct classname
+
+@mixin make-cssgrid($columns: $grid-column-max-count, $rows: $grid-row-max-count, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      // column
+      @if $columns > 0 {
+        // grid-col-*
+        @for $i from 1 through $columns {
+          &.grid-col-#{$i}#{$infix} {
+            grid-template-columns: repeat($i, 1fr);
+          }
+        }
+  
+        // col-*
+        @for $i from 1 through $columns {
+          .col-#{$i}#{$infix} {
+            grid-column: auto / span $i;
+          }
+        }
+
+        // Start with `1` because `0` is and invalid value.
+        // Ends with `$columns - 1` because offsetting by the width of an entire row isn't possible.
+        @for $i from 1 through ($columns - 1) {
+          .col-start-#{$i}#{$infix} {
+            grid-column-start: $i;
+          }
+        }
+      }
+
+      // row-*
+      @if $rows > 0 {
+        @for $i from 1 through $rows {
+          &.grid-row-#{$i}#{$infix} {
+            grid-template-rows: repeat($i, 1fr);
+          }
+        }
+  
+        @for $i from 1 through $rows {
+          .row-#{$i}#{$infix} {
+            grid-row: auto / span $i;
+          }
+        }
+
+        // Start with `1` because `0` is and invalid value.
+        // Ends with `$rows - 1` because offsetting by the width of an entire row isn't possible.
+        @for $i from 1 through ($rows - 1) {
+          .row-start-#{$i}#{$infix} {
+            grid-row-start: $i;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+// grid system
+.grid {
+  display: grid;
+  grid-template-columns: repeat($grid-column-count, 1fr);
+  grid-template-rows: repeat($grid-row-count, 1fr);
+
+  @include make-cssgrid();
+}
