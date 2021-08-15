@@ -2,7 +2,7 @@
 
 Lightweight CSS Grid System
 
-![waffle](./assets/waffle.jpg)
+![waffle](./demo/assets/waffle.jpg)
 
 
 For more details:
