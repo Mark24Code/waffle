@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/Mark24Code/waffle/compare/v1.2.1...v1.3.0) (2021-08-16)
+
+
+### Features
+
+* add flex class ([a4b4efe](https://github.com/Mark24Code/waffle/commit/a4b4efedca5a045af95da8aa35941dfc0550da0c))
+* update docs ([f13b65d](https://github.com/Mark24Code/waffle/commit/f13b65dc8283cc4a7a2ff03319f18f92ffba5ad7))
+
 ### [1.2.1](https://github.com/Mark24Code/waffle/compare/v1.2.0...v1.2.1) (2021-08-16)
 
 ## [1.2.0](https://github.com/Mark24Code/waffle/compare/v1.0.0...v1.2.0) (2021-08-16)
