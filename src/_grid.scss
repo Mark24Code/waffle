@@ -1,8 +1,3 @@
-@import './_variables.scss';
-@import './_breakpoints.scss';
-
-
-
 // Framework grid generation
 // use breakpoints to generate correct classname
 
@@ -58,11 +53,19 @@
           }
         }
       }
+
+      // grid row-gap  column-gap
+      @each $key, $value in $gaps {
+        &.gap-row-#{$key} {
+          grid-row-gap: #{$value};
+        }
+        &.gap-col-#{$key} {
+          grid-column-gap: #{$value};
+        }
+      }
     }
   }
 }
-
-
 
 // grid system
 .grid {

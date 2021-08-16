@@ -1,13 +1,14 @@
 
 
 // Prefix
-$prefix: wf- !default;
+$variable-prefix: wf- !default;
 
-// Namespace symbol
+// Breakpoints namespace symbol
 $ns: '\:' !default;
 
 
 // Grid System 
+
 // default count
 $grid-column-count: 12 !default;
 $grid-row-count: 1 !default;
@@ -28,20 +29,34 @@ $grid-breakpoints: (
   2xl: 1536px
 ) !default;
 
-// TODO 一会弄Gutter
-// // scss-docs-start spacer-variables-maps
-// $spacer: 1rem !default;
-// $spacers: (
-//   0: 0,
-//   1: $spacer * .25,
-//   2: $spacer * .5,
-//   3: $spacer,
-//   4: $spacer * 1.5,
-//   5: $spacer * 3,
-// ) !default;
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+// spacer-variables-maps
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+) !default;
+
+$gaps: $spacers !default;
 
 
+// container-max-widths
+$container-max-widths: (
+  sm: 590px,
+  md: 720px,
+  lg: 924px,
+  xl: 1110px,
+  xxl: 1320px
+) !default;
 
-// $grid-gutter-width:           1.5rem !default;
-// $gutters: $spacers !default;
+
+// Container padding
+$container-padding-x: 0.75rem !default;
+
 

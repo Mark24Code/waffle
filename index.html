@@ -143,12 +143,14 @@
       <p>响应式断点：
 
         <code>
+          $grid-breakpoints: (
             xs: 0,
             sm: 640px,
             md: 768px,
             lg: 1024px,
             xl: 1280px,
             2xl: 1536px
+            ) !default;
         </code>
       </p>
       <p>
@@ -208,6 +210,55 @@
     </div>
   </section>
 
+  <section class='demo demo3-1'>
+    <h2>容器：支持6档自定义 col、row两个方向 gap</h2>
+    <div>
+      <p>响应式断点：
+  
+        <code>
+            $spacer: 1rem !default;
+            $spacers: (
+            0: 0,
+            1: $spacer * .25,
+            2: $spacer * .5,
+            3: $spacer,
+            4: $spacer * 1.5,
+            5: $spacer * 3,
+            ) !default;
+
+            $gaps: $spacers !default;
+          </code>
+        可以覆盖基准或者是 映射
+      </p>
+    </div>
+    <textarea rows="10" cols='100'>
+          <div class='grid grid-col-3 grid-row-3 gap-row-3 gap-col-3'>
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+            <div class="item item-6">6</div>
+            <div class="item item-7">7</div>
+            <div class="item item-8">8</div>
+            <div class="item item-9">9</div>
+          </div>
+        </textarea>
+  
+    <div class='demo3-1-box'>
+      <div class='grid grid-col-3 grid-row-3 gap-row-3 gap-col-3'>
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+        <div class="item item-6">6</div>
+        <div class="item item-7">7</div>
+        <div class="item item-8">8</div>
+        <div class="item item-9">9</div>
+      </div>
+    </div>
+  </section>
   <section class='demo demo4'>
     <h2>元素：跨行、列的能力</h2>
     <div>
@@ -404,6 +455,77 @@
           <div class="item item-5">19</div>
           <div class="item item-6">20</div>
         </div>
+    </div>
+  </section>
+
+  <section class='demo demo7'>
+    <h2>container: 工具容器</h2>
+    <div>
+      container容器提供居中，容器定长响应式宽度
+      <code>
+        $container-max-widths: (
+        sm: 600px,
+        md: 720px,
+        lg: 924px,
+        xl: 1110px,
+        xxl: 1320px
+        ) !default;
+
+      </code>
+      可覆盖拓展
+    </div>
+    <textarea rows="10" cols='100'>
+      <div class='container'>
+        <div class='grid grid-col-6'>
+          <div class="item item-1">1</div>
+          <div class="item item-2">2</div>
+          <div class="item item-3">3</div>
+          <div class="item item-4">4</div>
+          <div class="item item-5">5</div>
+          <div class="item item-6">6</div>
+          <div class="item item-7">7</div>
+          <div class="item item-8">8</div>
+          <div class="item item-9">9</div>
+          <div class="item item-3">10</div>
+          <div class="item item-4">11</div>
+          <div class="item item-5">12</div>
+          <div class="item item-6">13</div>
+          <div class="item item-7">14</div>
+          <div class="item item-8">15</div>
+          <div class="item item-9">16</div>
+          <div class="item item-3">17</div>
+          <div class="item item-4">18</div>
+          <div class="item item-5">19</div>
+          <div class="item item-6">20</div>
+        </div>
+      </div>
+    </textarea>
+  
+    <div class='demo7-box'>
+      <div class='container'>
+        <div class='grid grid-col-6'>
+          <div class="item item-1">1</div>
+          <div class="item item-2">2</div>
+          <div class="item item-3">3</div>
+          <div class="item item-4">4</div>
+          <div class="item item-5">5</div>
+          <div class="item item-6">6</div>
+          <div class="item item-7">7</div>
+          <div class="item item-8">8</div>
+          <div class="item item-9">9</div>
+          <div class="item item-3">10</div>
+          <div class="item item-4">11</div>
+          <div class="item item-5">12</div>
+          <div class="item item-6">13</div>
+          <div class="item item-7">14</div>
+          <div class="item item-8">15</div>
+          <div class="item item-9">16</div>
+          <div class="item item-3">17</div>
+          <div class="item item-4">18</div>
+          <div class="item item-5">19</div>
+          <div class="item item-6">20</div>
+        </div>
+      </div>
     </div>
   </section>
 </body>

@@ -1,0 +1,51 @@
+
+// Container
+@mixin make-container($gutter: $container-padding-x) {
+  width: 100%;
+  padding-right: #{$gutter};
+  padding-left: #{$gutter};
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+// Single container class with breakpoint max-widths
+.container,
+// 100% wide container at all breakpoints
+.container-fluid {
+  @include make-container();
+}
+
+
+
+@each $breakpoint, $container-max-width in $container-max-widths {
+  // basic 100% 
+  .container-#{$breakpoint} {
+    @extend .container-fluid;
+  }
+
+  // container use breakpoint max witdh
+  @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+
+    //% SCSS:placeholder-selectors  https://devdocs.io/sass/style-rules/placeholder-selectors
+    %responsive-container-#{$breakpoint} {
+      max-width: $container-max-width;
+    }
+
+    // Extend each breakpoint which is smaller or equal to the current breakpoint
+    $extend-breakpoint: true;
+
+    @each $name, $width in $grid-breakpoints {
+      @if ($extend-breakpoint) {
+        .container#{breakpoint-infix($name, $grid-breakpoints)} {
+          @extend %responsive-container-#{$breakpoint};
+        }
+
+        // Once the current breakpoint is reached, stop extending
+        @if ($breakpoint == $name) {
+          $extend-breakpoint: false;
+        }
+      }
+    }
+  }
+}
