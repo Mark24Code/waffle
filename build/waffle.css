@@ -2824,4 +2824,30 @@
   max-width: 1320px;
 }
 
+.flex, .flex-y, .flex-y-space-between, .flex-y-space-around, .flex-x, .flex-space-between, .flex-x-space-between, .flex-space-around, .flex-x-space-around {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-space-around, .flex-x-space-around {
+  justify-content: space-around;
+}
+
+.flex-space-between, .flex-x-space-between {
+  justify-content: space-between;
+}
+
+.flex-y, .flex-y-space-between, .flex-y-space-around {
+  flex-direction: column;
+}
+
+.flex-y-space-around {
+  justify-content: space-around;
+}
+
+.flex-y-space-between {
+  justify-content: space-between;
+}
+
 /*# sourceMappingURL=waffle.css.map */
